@@ -15,10 +15,10 @@ function App() {
           </div>
           <div className="Monta-Capital-Information">
             <div className="Information">
-              <p><span>Monta Capital - London</span><br />Tel: +44 207 118 1815<br />Email: info@montacapital.com<br />Address: 1 Brick Street, Mayfair, London, W1j 7DF</p>
+              <p><span>Monta Capital - London</span><br />Tel: +44 207 118 1815<br />Email: info@montacapital.com<br />Address: 10 Brick Street, Mayfair, London, W1J 7DF</p>
             </div>
             <div className="Information">
-              <p><span>Monta Capital - Stockholm</span><br />Tel: +44 207 118 1815<br />Email: info@montacapital.com<br />Address: Cecil Coworking, Norrlandsgatan, 10, 11, 43, Stockholm, Sweden</p>
+              <p><span>Monta Capital - Stockholm</span><br />Tel: +44 207 118 1815<br />Email: info@montacapital.com<br />Address: Norrlandsgatan 10, 111 43, Stockholm, Sweden</p>
             </div>
           </div>
           <div className="Monta-Capital-Legal">

@@ -83,3 +83,37 @@ p {
 .Monta-Capital-Title h1 {
   line-height: 45px;
 }
+
+@media only screen and (max-width: 600px) {
+  .Maintance-Container {
+    padding-left: 0;
+    border-left: none;
+    max-width: 80%;
+    padding-top: 40px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .Monta-Capital-Information .Information {
+    display: block;
+    width: 100%;
+  }
+
+  .Information:nth-child(1) {
+    margin-bottom: 40px;
+  }
+
+  .Background-Logo {
+    right: -10%;
+  }
+
+  .Background-Logo svg {
+    height: 100vh
+  }
+
+  .Monta-Logo .Logo {
+    height: 60px
+  }
+}
