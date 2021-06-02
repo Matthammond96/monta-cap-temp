@@ -1,38 +1,85 @@
+h1, h2, h3, h4, p, a {
+  font-family: montserrat,sans-serif;
+  font-weight: 200;
+}
+
+h1 {
+  font-size: 26px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 40px;
+}
+
+.Legal {
+  font-weight: 300;
+  font-size: 10px;
+  font-style: italic;
+  line-height: 30px;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  min-height: 98vh;
 }
 
-.App-link {
-  color: #61dafb;
+.Background-Logo {
+  position: fixed;
+  top: 50%;
+  right: -30%;
+  width: 100vw;
+  height: auto;
+  transform: translateY(-50%)
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Background-Logo svg {
+  opacity: 0.07;
+}
+
+.Maintance-Container {
+  flex: 1;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1150px;
+  padding-left: 95px;
+  border-left: 1px solid #000;
+}
+
+.Monta-Logo, .Monta-Capital-Title, .Monta-Capital-Information {
+  margin-bottom: 60px;
+}
+
+.Monta-Logo {
+  margin-top: 15px;
+}
+
+.Monta-Capital-Legal {
+  margin-bottom: 15px;
+}
+
+.Monta-Logo .Logo {
+  width: auto;
+  height: 70px;
+}
+
+.Monta-Capital-Information .Information {
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+}
+
+.Information span {
+  font-weight: 300;
+}
+
+.Monta-Capital-Title {
+  max-width: 950px;
+}
+
+.Monta-Capital-Title h1 {
+  line-height: 45px;
 }
