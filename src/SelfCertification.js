@@ -9,44 +9,51 @@ function Maintance() {
   const [email, setEmail] = useState()
   const [confirmation, setConfirmation] = useState(false)
   const [error, setError] = useState(false)
+  const [disabled, setDisabled] = useState(false)
 
   const postForm = async (e) => {
     e.preventDefault()
 
-    console.log(e.target)
+    setDisabled(true)
     const checkSuccessResult = await checkSuccess();
-    if (checkSuccessResult !== true) { return console.log(error) }
+    if (checkSuccessResult !== true) { return setDisabled(false) }
 
     const templateParams = { investor, firstName, lastName, email }
-    emailjs.send('serviceId', 'template_1n7v7j2', templateParams, 'user_3DPqUbb7akqqgECWF692w')
+    emailjs.send('service_fkp24sc', 'template_1n7v7j2', templateParams, 'user_3DPqUbb7akqqgECWF692w')
     .then(() => {
       setError(false)
+      setDisabled(true)
       window.location.pathname = "/Monta-Capital-Offering-Documents.pdf"
     })
   }
 
   const checkSuccess = async () => {
     if (!investor) { 
+      setDisabled(true)
       setError("Please select your investor type from the above choices.")
       return false
     }
 
     if (!firstName) { 
+      setDisabled(true)
       setError("Please enter your first name.")
       return false
     }
 
     if (!lastName) { 
+      setDisabled(true)
       setError("Please enter your last name.")
       return false
     }
 
     if (!email) { 
+      setDisabled(true)
       setError("Please enter your email address.")
       return false
     }
     
     if (!confirmation) { 
+      setDisabled(true)
       setError("Please check the box.")
       return false
     }
@@ -105,7 +112,7 @@ function Maintance() {
           <input className="indent" type="radio" name="confirm" value="true" onClick={() => setConfirmation(true)}></input>
           <label className="Para-Bold" for="confirm">Check to confirm you understand the declarations above and you meet the criteria of the statement you have selected.</label>
           <br/><br/>
-          <input type="submit" className="btn" value="Submit" />
+          <input type="submit" className="btn" value="Submit" disabled={disabled} />
         </form>
       </div>
     </div>
