@@ -1,5 +1,6 @@
 import React, { useState }  from 'react'
 import MontaCapitalLogo from './Monta-Capital-Logo.svg'
+import emailjs from 'emailjs-com';
 
 function Maintance() {
   const [investor, setInvestor] = useState(false)
@@ -12,16 +13,16 @@ function Maintance() {
   const postForm = async (e) => {
     e.preventDefault()
 
+    console.log(e.target)
     const checkSuccessResult = await checkSuccess();
     if (checkSuccessResult !== true) { return console.log(error) }
 
-    setError(false)
-
-    console.log(`investor: ${investor}`)
-    console.log(`firstName: ${firstName}`)
-    console.log(`lastName: ${lastName}`)
-    console.log(`email: ${email}`)
-    console.log(`confirmation: ${confirmation}`)
+    const templateParams = { investor, firstName, lastName, email }
+    emailjs.send('serviceId', 'template_1n7v7j2', templateParams, 'user_3DPqUbb7akqqgECWF692w')
+    .then(() => {
+      setError(false)
+      window.location.pathname = "/Monta-Capital-Offering-Documents.pdf"
+    })
   }
 
   const checkSuccess = async () => {
@@ -67,7 +68,7 @@ function Maintance() {
         </div>
       </div>
       <div className="Monta-Capital-Form">
-        <form>
+        <form onSubmit={e => postForm(e)}>
           <p className="Para-Bold">To invest in this offer we must ascertain what type of investor you are. Please select from one of the categories below:</p>
           <div className="form-group">
             <input type="radio" name="investor" value="High Net Worth" onClick={() => setInvestor("High Net Worth")}></input>
@@ -104,7 +105,7 @@ function Maintance() {
           <input className="indent" type="radio" name="confirm" value="true" onClick={() => setConfirmation(true)}></input>
           <label className="Para-Bold" for="confirm">Check to confirm you understand the declarations above and you meet the criteria of the statement you have selected.</label>
           <br/><br/>
-          <button onClick={e => postForm(e)}>Submit</button>
+          <input type="submit" className="btn" value="Submit" />
         </form>
       </div>
     </div>
