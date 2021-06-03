@@ -37,7 +37,8 @@ p {
   right: -30%;
   width: 100vw;
   height: auto;
-  transform: translateY(-50%)
+  transform: translateY(-50%);
+  z-index: 0;
 }
 
 .Background-Logo svg {
@@ -51,6 +52,8 @@ p {
   max-width: 1150px;
   padding-left: 95px;
   border-left: 1px solid #000;
+  position: relative;
+  z-index: 1;
 }
 
 .Monta-Logo, .Monta-Capital-Title, .Monta-Capital-Information {
